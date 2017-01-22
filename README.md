@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+Jekyll Clean Dark
+============
 
-You can use the [editor on GitHub](https://github.com/zcbgit/zcbgit.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This theme was created on top of Jekyll Clean theme by Scotte, you can view the original version in action [on his blog](https://scotte.github.io).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+* Get it from [github](https://github.com/streetturtle/jekyll-clean-dark).
+* See the [live demo](http://pavelmakhov.com/jekyll-clean-dark).
+* See it [in action on my own blog](http://pavelmakhov.com).
 
-### Markdown
+This theme uses some parts of Twitter Bootstrap, which allows it to look nice on a mobile devices using a collapsable nav bar and hiding the
+sidebar.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Optionally you can use:
 
-```markdown
-Syntax highlighted code block
+ - [Disqus](http://disqus.com) as a comments system;
+ - [Google Analytics](http://www.google.com/analytics/);
+ - [Yandex Metrica](http://metrica.yandex.com);
+ - Blog tags;
+ - Share buttons.
 
-# Header 1
-## Header 2
-### Header 3
+All these features could be set up in `_config.yml`. Also you can have social icons which could lead to your social profiles. It uses [font-awesome](http://fontawesome.io/), so you can have any icon you want to any social profile. Out-of-the box it has: LinkedIn, GitHub, StackOverflow, LastFm, Instagram. And you can easily add more by adding new style in `theme.css` and setting it in `_config.yml`.
 
-- Bulleted
-- List
+Installation
+==
 
-1. Numbered
-2. List
+If you dont't have your own blog you can clone this repository and put your articles in a `_posts` folder.
+If you already have your own blog then I think you can clone this repository and copy-paste content keeping your `_posts` folder.
 
-**Bold** and _Italic_ and `Code` text
+After you will have to set up your `_config.yml`
 
-[Link](url) and ![Image](src)
-```
+License
+=======
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+The content of this theme is distributed and licensed under a
+[Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
 
-### Jekyll Themes
+    This license lets others distribute, remix, tweak, and build upon your work,
+    even commercially, as long as they credit you for the original creation. This
+    is the most accommodating of licenses offered. Recommended for maximum
+    dissemination and use of licensed materials.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zcbgit/zcbgit.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+In other words: you can do anything you want with this theme on any site, just please
+provide a link to the original theme on github.
 
-### Support or Contact
+This theme includes the following files which are the properties of their
+respective owners:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* js/bootstrap.min.js - [bootstrap](http://getbootstrap.com)
+* css/bootstrap.min.css - [bootstrap](http://getbootstrap.com)
+* js/jquery.min.js - [jquery](https://jquery.com)
