@@ -7,9 +7,9 @@ resume_site: https://github.com/zcbgit
 github: https://github.com/zcbgit
 baseurl: ""
 description: Actually, less is more!
-meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
+meta_description: 个人笔记;个人博客;
 motto: It's our wits that make us men.
-banner: 学而不思则罔，思而不学则殆。
+banner: 记录知识，记录生活。
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
@@ -22,6 +22,9 @@ highlighter: rouge
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  syntax_highlighter: rouge
 
 baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
 
