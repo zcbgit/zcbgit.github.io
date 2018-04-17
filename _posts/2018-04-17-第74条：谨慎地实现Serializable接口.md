@@ -2,7 +2,7 @@
 layout: post
 title:  "第74条：谨慎地实现Serializable接口"
 date:   2018-04-17 12:23:10 +0800
-categories: Java
+categories: Effective-Java
 tag: Java
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "第9条：覆盖equals时总要覆盖hashCode"
 date:   2018-04-10 11:44:11 +0800
-categories: Java
+categories: Effective-Java
 tag: Java
 ---
 

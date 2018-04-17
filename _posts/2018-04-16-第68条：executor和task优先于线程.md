@@ -2,7 +2,7 @@
 layout: post
 title:  "第68条：executor和task优先于线程"
 date:   2018-04-16 20:12:53 +0800
-categories: Java
+categories: Effective-Java
 tag: Java
 ---
 

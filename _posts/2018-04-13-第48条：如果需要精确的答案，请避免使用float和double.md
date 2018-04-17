@@ -2,7 +2,7 @@
 layout: post
 title:  "第48条：如果需要精确的答案，请避免使用float和double"
 date:   2018-04-13 15:48:15 +0800
-categories: Java
+categories: Effective-Java
 tag: Java
 ---
 
