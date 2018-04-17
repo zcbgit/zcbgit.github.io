@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "µÚ68Ìõ£ºexecutorºÍtaskÓÅÏÈÓÚÏß³Ì"
+title:  "ç¬¬68æ¡ï¼šexecutorå’Œtaskä¼˜å…ˆäºçº¿ç¨‹"
 date:   2018-04-16 20:12:53 +0800
-categories: effective-java
+categories: Java
 tag: Java
 ---
 
 
-Ê¹ÓÃjava.util.concurrent.ExecutorsÀàÀ´¿ª·¢Ïß³Ì³Ø¡£Í¬Ê±Ê¹ÓÃScheduledThreadPoolExecutorÀ´´úÌætimer¡£¾ßÌåÍ¬²½¼û¡¶Java Concurrency in Practice¡·
+ä½¿ç”¨java.util.concurrent.Executorsç±»æ¥å¼€å‘çº¿ç¨‹æ± ã€‚åŒæ—¶ä½¿ç”¨ScheduledThreadPoolExecutoræ¥ä»£æ›¿timerã€‚å…·ä½“åŒæ­¥è§ã€ŠJava Concurrency in Practiceã€‹

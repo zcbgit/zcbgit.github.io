@@ -1,35 +1,35 @@
 ---
 layout: post
-title:  "µÚ9Ìõ£º¸²¸Ç equals Ê±×ÜÒª¸²¸Ç hashCode"
+title:  "ç¬¬9æ¡ï¼šè¦†ç›–equalsæ—¶æ€»è¦è¦†ç›–hashCode"
 date:   2018-04-10 11:44:11 +0800
-categories: effective-java
+categories: Java
 tag: Java
 ---
 
 
-Ò»¸öºÜ³£¼ûµÄ´íÎó¸ùÔ´ÔÚÓÚÃ»ÓÐ¸²¸Ç hashCode ·½·¨¡£ÔÚÃ¿¸ö¸²¸ÇÁË equals ·½·¨µÄÀàÖÐ£¬Ò²±ØÐë¸²¸Ç hashCode ·½·¨¡£Èç¹û²»ÕâÑù×öµÄ»°£¬¾Í»áÎ¥·´ Object.hashcode µÄÍ¨ÓÃÔ¼¶¨£¬´Ó¶øµ¼ÖÂ¸ÃÀàÎÞ·¨½áºÏËùÓÐ»ùÓÚÉ¢ÁÐµÄ¼¯ºÏÒ»ÆðÕý³£¹¤×÷£¬ÕâÑùµÄ¼¯ºÏ°üÀ¨ HashMap ¡¢ HashSet ºÍ Hashtable ¡£
+ä¸€ä¸ªå¾ˆå¸¸è§çš„é”™è¯¯æ ¹æºåœ¨äºŽæ²¡æœ‰è¦†ç›– hashCode æ–¹æ³•ã€‚åœ¨æ¯ä¸ªè¦†ç›–äº† equals æ–¹æ³•çš„ç±»ä¸­ï¼Œä¹Ÿå¿…é¡»è¦†ç›– hashCode æ–¹æ³•ã€‚å¦‚æžœä¸è¿™æ ·åšçš„è¯ï¼Œå°±ä¼šè¿å Object.hashcode çš„é€šç”¨çº¦å®šï¼Œä»Žè€Œå¯¼è‡´è¯¥ç±»æ— æ³•ç»“åˆæ‰€æœ‰åŸºäºŽæ•£åˆ—çš„é›†åˆä¸€èµ·æ­£å¸¸å·¥ä½œï¼Œè¿™æ ·çš„é›†åˆåŒ…æ‹¬ HashMap ã€ HashSet å’Œ Hashtable ã€‚
 
-###### ÏÂÃæÊÇÔ¼¶¨µÄÄÚÈÝ£¬Õª×Ô Object ¹æ·¶[JavaSE6]£º
-> - ÔÚÓ¦ÓÃ³ÌÐòµÄÖ´ÐÐÆÚ¼ä£¬Ö»Òª¶ÔÏóµÄ equals ·½·¨µÄ±È½Ï²Ù×÷ËùÓÃµ½µÄÐÅÏ¢Ã»ÓÐ±»ÐÞ¸Ä£¬ÄÇÃ´¶ÔÍ¬Ò»¸ö¶ÔÏóµ÷ÓÃ¶à´Î£¬ hashCode ·½·¨¶¼±ØÐëÊ¼ÖÕÈçÒ»µØ·µ»ØÍ¬Ò»¸öÕûÊý¡£ÔÚÍ¬Ò»¸öÓ¦ÓÃ³ÌÐòµÄ¶à´ÎÖ´ÐÐ¹ý³ÌÖÐ£¬Ã¿´ÎÖ´ÐÐËù·µ»ØµÄÕûÊý¿ÉÒÔ²»Ò»ÖÂ¡£
-> - Èç¹ûÁ½¸ö¶ÔÏó¸ù¾Ý equals(Object) ·½·¨±È½ÏÊÇÏàµÈµÄ£¬ÄÇÃ´µ÷ÓÃÕâÁ½¸ö¶ÔÏóÖÐÈÎÒâÒ»¸ö¶ÔÏóµÄ hashCode ·½·¨¶¼±ØÐë²úÉúÍ¬ÑùµÄÕûÊý½á¹û¡£
-> - Èç¹ûÁ½¸ö¶ÔÏó¸ù¾Ý equals(Object) ·½·¨±È½ÏÊÇ²»ÏàµÈµÄ£¬ÄÇÃ´µ÷ÓÃÕâÁ½¸ö¶ÔÏóÖÐÈÎÒâÒ»¸ö¶ÔÏóµÄ hashCode ·½·¨£¬Ôò²»Ò»¶¨Òª²úÉú²»Í¬µÄÕûÊý½á¹û¡£µ«ÊÇ³ÌÐòÔ±Ó¦¸ÃÖªµÀ£¬¸ø²»ÏàµÈµÄ¶ÔÏó²úÉú½ØÈ»²»Í¬µÄÕûÊý½á¹û£¬ÓÐ¿ÉÄÜÌá¸ßÉ¢ÁÐ±í£¨hash table£©µÄÐÔÄÜ¡£
+###### ä¸‹é¢æ˜¯çº¦å®šçš„å†…å®¹ï¼Œæ‘˜è‡ª Object è§„èŒƒ[JavaSE6]ï¼š
+> - åœ¨åº”ç”¨ç¨‹åºçš„æ‰§è¡ŒæœŸé—´ï¼Œåªè¦å¯¹è±¡çš„ equals æ–¹æ³•çš„æ¯”è¾ƒæ“ä½œæ‰€ç”¨åˆ°çš„ä¿¡æ¯æ²¡æœ‰è¢«ä¿®æ”¹ï¼Œé‚£ä¹ˆå¯¹åŒä¸€ä¸ªå¯¹è±¡è°ƒç”¨å¤šæ¬¡ï¼Œ hashCode æ–¹æ³•éƒ½å¿…é¡»å§‹ç»ˆå¦‚ä¸€åœ°è¿”å›žåŒä¸€ä¸ªæ•´æ•°ã€‚åœ¨åŒä¸€ä¸ªåº”ç”¨ç¨‹åºçš„å¤šæ¬¡æ‰§è¡Œè¿‡ç¨‹ä¸­ï¼Œæ¯æ¬¡æ‰§è¡Œæ‰€è¿”å›žçš„æ•´æ•°å¯ä»¥ä¸ä¸€è‡´ã€‚
+> - å¦‚æžœä¸¤ä¸ªå¯¹è±¡æ ¹æ® equals(Object) æ–¹æ³•æ¯”è¾ƒæ˜¯ç›¸ç­‰çš„ï¼Œé‚£ä¹ˆè°ƒç”¨è¿™ä¸¤ä¸ªå¯¹è±¡ä¸­ä»»æ„ä¸€ä¸ªå¯¹è±¡çš„ hashCode æ–¹æ³•éƒ½å¿…é¡»äº§ç”ŸåŒæ ·çš„æ•´æ•°ç»“æžœã€‚
+> - å¦‚æžœä¸¤ä¸ªå¯¹è±¡æ ¹æ® equals(Object) æ–¹æ³•æ¯”è¾ƒæ˜¯ä¸ç›¸ç­‰çš„ï¼Œé‚£ä¹ˆè°ƒç”¨è¿™ä¸¤ä¸ªå¯¹è±¡ä¸­ä»»æ„ä¸€ä¸ªå¯¹è±¡çš„ hashCode æ–¹æ³•ï¼Œåˆ™ä¸ä¸€å®šè¦äº§ç”Ÿä¸åŒçš„æ•´æ•°ç»“æžœã€‚ä½†æ˜¯ç¨‹åºå‘˜åº”è¯¥çŸ¥é“ï¼Œç»™ä¸ç›¸ç­‰çš„å¯¹è±¡äº§ç”Ÿæˆªç„¶ä¸åŒçš„æ•´æ•°ç»“æžœï¼Œæœ‰å¯èƒ½æé«˜æ•£åˆ—è¡¨ï¼ˆhash tableï¼‰çš„æ€§èƒ½ã€‚
 
-###### ÊµÏÖhashCodeµÄ¼òµ¥·½·¨£º
-1. °ÑÄ³¸ö·ÇÁãµÄ³£ÊýÖµ£¬±ÈÈçËµ17£¬±£´æÔÚÒ»¸öÃûÎª result µÄ int ÀàÐÍµÄ±äÁ¿ÖÐ¡£
-2. ¶ÔÓÚ¶ÔÏóÖÐÃ¿¸ö¹Ø¼üÓò f £¨Ö¸ equals ·½·¨ÖÐÉæ¼°µÄÃ¿¸öÓò£©£¬Íê³ÉÒÔÏÂ²½Öè£º  
-   1. Îª¸ÃÓò¼ÆËã int ÀàÐÍµÄÉ¢ÁÐÂë c :
-       1. Èç¹û¸ÃÓòÊÇ boolean ÀàÐÍ£¬Ôò¼ÆËã (f ? 1 : 0) .
-       2. Èç¹û¸ÃÓòÊÇ byte ¡¢ char ¡¢ short »òÕß int ÀàÐÍ£¬Ôò¼ÆËã (int)f ¡£
-       3. Èç¹û¸ÃÓòÊÇ long ÀàÐÍ£¬Ôò¼ÆËã (int)(f ^ (f >>> 32)) ¡£
-       4. Èç¹û¸ÃÓòÊÇ float ÀàÐÍ£¬Ôò¼ÆËã Float.floatToIntBits(f) ¡£
-       5. Èç¹û¸ÃÓòÊÇ double ÀàÐÍ£¬Ôò¼ÆËã Double.doubleToLongBits(f) £¬È»ºó°´ÕÕ²½Öè2.i.c£¬ÎªµÃµ½µÄ long ÀàÐÍÖµ¼ÆËãÉ¢ÁÐÖµ¡£
-       6. Èç¹û¸ÃÓòÊÇÒ»¸ö¶ÔÏóÒýÓÃ£¬²¢ÇÒ¸ÃÓòµÄ equals ·½·¨Í¨¹ýµÝ¹éµØµ÷ÓÃ equals µÄ·½Ê½À´±È½ÏÕâ¸öÓò£¬ÔòÍ¬ÑùÎªÕâ¸öÓòµÝ¹éµØµ÷ÓÃ hashCode ¡£Èç¹ûÐèÒª¸ü¸´ÔÓµÄ±È½Ï£¬ÔòÎªÕâ¸öÓò¼ÆËãÒ»¸ö¡°·¶Ê½£¨canonical representation£©¡±£¬È»ºóÕë¶ÔÕâ¸ö·¶Ê½µ÷ÓÃ hashCode ¡£Èç¹ûÕâ¸öÓòµÄÖµÎª null £¬Ôò·µ»Ø0£¨»òÕßÆäËûÄ³¸ö³£Êý£¬µ«Í¨³£ÊÇ0£©¡£
-       7. Èç¹û¸ÃÓòÊÇÒ»¸öÊý×é£¬ÔòÒª°ÑÃ¿Ò»¸öÔªËØµ±×öµ¥¶ÀµÄÓòÀ´´¦Àí¡£Ò²¾ÍÊÇËµ£¬µÝ¹éµØÓ¦ÓÃÉÏÊö¹æÔò£¬¶ÔÃ¿¸öÖØÒªµÄÔªËØ¼ÆËãÒ»¸öÉ¢ÁÐÂë£¬È»ºó¸ù¾Ý²½Öè2.iÖÐµÄ×ö·¨°ÑÕâÐ©É¢ÁÐÖµ×éºÏÆðÀ´¡£Èç¹ûÊý×éÓòÖÐµÄÃ¿¸öÔªËØ¶¼ºÜÖØÒª£¬¿ÉÒÔÀûÓÃ·¢ÐÐ°æ±¾1.5ÖÐÔö¼ÓµÄÆäÖÐÒ»¸ö Arrays.hashCode ·½·¨¡£
-    2. °´ÕÕÏÂÃæµÄ¹«Ê½£¬°Ñ²½Öè2.aÖÐ¼ÆËãµÃµ½µÄÉ¢ÁÐÂë c ºÏ²¢µ½ result ÖÐ£º  
+###### å®žçŽ°hashCodeçš„ç®€å•æ–¹æ³•ï¼š
+1. æŠŠæŸä¸ªéžé›¶çš„å¸¸æ•°å€¼ï¼Œæ¯”å¦‚è¯´17ï¼Œä¿å­˜åœ¨ä¸€ä¸ªåä¸º result çš„ int ç±»åž‹çš„å˜é‡ä¸­ã€‚
+2. å¯¹äºŽå¯¹è±¡ä¸­æ¯ä¸ªå…³é”®åŸŸ f ï¼ˆæŒ‡ equals æ–¹æ³•ä¸­æ¶‰åŠçš„æ¯ä¸ªåŸŸï¼‰ï¼Œå®Œæˆä»¥ä¸‹æ­¥éª¤ï¼š  
+   1. ä¸ºè¯¥åŸŸè®¡ç®— int ç±»åž‹çš„æ•£åˆ—ç  c :
+       1. å¦‚æžœè¯¥åŸŸæ˜¯ boolean ç±»åž‹ï¼Œåˆ™è®¡ç®— (f ? 1 : 0) .
+       2. å¦‚æžœè¯¥åŸŸæ˜¯ byte ã€ char ã€ short æˆ–è€… int ç±»åž‹ï¼Œåˆ™è®¡ç®— (int)f ã€‚
+       3. å¦‚æžœè¯¥åŸŸæ˜¯ long ç±»åž‹ï¼Œåˆ™è®¡ç®— (int)(f ^ (f >>> 32)) ã€‚
+       4. å¦‚æžœè¯¥åŸŸæ˜¯ float ç±»åž‹ï¼Œåˆ™è®¡ç®— Float.floatToIntBits(f) ã€‚
+       5. å¦‚æžœè¯¥åŸŸæ˜¯ double ç±»åž‹ï¼Œåˆ™è®¡ç®— Double.doubleToLongBits(f) ï¼Œç„¶åŽæŒ‰ç…§æ­¥éª¤2.i.cï¼Œä¸ºå¾—åˆ°çš„ long ç±»åž‹å€¼è®¡ç®—æ•£åˆ—å€¼ã€‚
+       6. å¦‚æžœè¯¥åŸŸæ˜¯ä¸€ä¸ªå¯¹è±¡å¼•ç”¨ï¼Œå¹¶ä¸”è¯¥åŸŸçš„ equals æ–¹æ³•é€šè¿‡é€’å½’åœ°è°ƒç”¨ equals çš„æ–¹å¼æ¥æ¯”è¾ƒè¿™ä¸ªåŸŸï¼Œåˆ™åŒæ ·ä¸ºè¿™ä¸ªåŸŸé€’å½’åœ°è°ƒç”¨ hashCode ã€‚å¦‚æžœéœ€è¦æ›´å¤æ‚çš„æ¯”è¾ƒï¼Œåˆ™ä¸ºè¿™ä¸ªåŸŸè®¡ç®—ä¸€ä¸ªâ€œèŒƒå¼ï¼ˆcanonical representationï¼‰â€ï¼Œç„¶åŽé’ˆå¯¹è¿™ä¸ªèŒƒå¼è°ƒç”¨ hashCode ã€‚å¦‚æžœè¿™ä¸ªåŸŸçš„å€¼ä¸º null ï¼Œåˆ™è¿”å›ž0ï¼ˆæˆ–è€…å…¶ä»–æŸä¸ªå¸¸æ•°ï¼Œä½†é€šå¸¸æ˜¯0ï¼‰ã€‚
+       7. å¦‚æžœè¯¥åŸŸæ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œåˆ™è¦æŠŠæ¯ä¸€ä¸ªå…ƒç´ å½“åšå•ç‹¬çš„åŸŸæ¥å¤„ç†ã€‚ä¹Ÿå°±æ˜¯è¯´ï¼Œé€’å½’åœ°åº”ç”¨ä¸Šè¿°è§„åˆ™ï¼Œå¯¹æ¯ä¸ªé‡è¦çš„å…ƒç´ è®¡ç®—ä¸€ä¸ªæ•£åˆ—ç ï¼Œç„¶åŽæ ¹æ®æ­¥éª¤2.iä¸­çš„åšæ³•æŠŠè¿™äº›æ•£åˆ—å€¼ç»„åˆèµ·æ¥ã€‚å¦‚æžœæ•°ç»„åŸŸä¸­çš„æ¯ä¸ªå…ƒç´ éƒ½å¾ˆé‡è¦ï¼Œå¯ä»¥åˆ©ç”¨å‘è¡Œç‰ˆæœ¬1.5ä¸­å¢žåŠ çš„å…¶ä¸­ä¸€ä¸ª Arrays.hashCode æ–¹æ³•ã€‚
+    2. æŒ‰ç…§ä¸‹é¢çš„å…¬å¼ï¼ŒæŠŠæ­¥éª¤2.aä¸­è®¡ç®—å¾—åˆ°çš„æ•£åˆ—ç  c åˆå¹¶åˆ° result ä¸­ï¼š  
        result = 31 * result + c;
-3. ·µ»Øresult¡£
-4. Ð´ÍêÁË hashCode ·½·¨Ö®ºó£¬ÎÊÎÊ×Ô¼º¡°ÏàµÈµÄÊµÀýÊÇ·ñ¶¼¾ßÓÐÏàµÈµÄÉ¢ÁÐÂë¡±¡£Òª±àÐ´µ¥Ôª²âÊÔÀ´ÑéÖ¤ÄãµÄÍÆ¶Ï¡£Èç¹ûÏàµÈÊµÀýÓÐ×Å²»ÏàµÈµÄÉ¢ÁÐÂë£¬ÔòÒªÕÒ³öÔ­Òò£¬²¢ÐÞÕý´íÎó¡£
+3. è¿”å›žresultã€‚
+4. å†™å®Œäº† hashCode æ–¹æ³•ä¹‹åŽï¼Œé—®é—®è‡ªå·±â€œç›¸ç­‰çš„å®žä¾‹æ˜¯å¦éƒ½å…·æœ‰ç›¸ç­‰çš„æ•£åˆ—ç â€ã€‚è¦ç¼–å†™å•å…ƒæµ‹è¯•æ¥éªŒè¯ä½ çš„æŽ¨æ–­ã€‚å¦‚æžœç›¸ç­‰å®žä¾‹æœ‰ç€ä¸ç›¸ç­‰çš„æ•£åˆ—ç ï¼Œåˆ™è¦æ‰¾å‡ºåŽŸå› ï¼Œå¹¶ä¿®æ­£é”™è¯¯ã€‚
 
-¿ÉÒÔÓÃequalsÖÐÓÃµ½µÄ±äÁ¿×öhash¡£
+å¯ä»¥ç”¨equalsä¸­ç”¨åˆ°çš„å˜é‡åšhashã€‚
 
-> Ö®ËùÒÔÑ¡Ôñ31£¬ÊÇÒòÎªËüÊÇÒ»¸öÆæËØÊý¡£Èç¹û³ËÊýÊÇÅ¼Êý£¬²¢ÇÒ³Ë·¨Òç³öµÄ»°£¬ÐÅÏ¢¾Í»á¶ªÊ§£¬ÒòÎªÓë2Ïà³ËµÈ¼ÛÓÚÎ»ÒÆÔËËã¡£Ê¹ÓÃËØÊýµÄºÃ´¦²¢²»ºÜÃ÷ÏÔ£¬µ«ÊÇÏ°¹ßÉÏ¶¼Ê¹ÓÃËØÊýÀ´¼ÆËãÉ¢ÁÐ½á¹û¡£31ÓÐ¸öºÜºÃµÄÌØÐÔ£¬¼´ÓÃÎ»ÒÆºÍ¼õ·¨À´´úÌæ³Ë·¨£¬¿ÉÒÔµÃµ½¸üºÃµÄÐÔÄÜ£¬ 31 * i == (i << 5) - i ¡£ÏÖ´úµÄVM¿ÉÒÔ×Ô¶¯Íê³ÉÕâÖÖÓÅ»¯¡£
+> ä¹‹æ‰€ä»¥é€‰æ‹©31ï¼Œæ˜¯å› ä¸ºå®ƒæ˜¯ä¸€ä¸ªå¥‡ç´ æ•°ã€‚å¦‚æžœä¹˜æ•°æ˜¯å¶æ•°ï¼Œå¹¶ä¸”ä¹˜æ³•æº¢å‡ºçš„è¯ï¼Œä¿¡æ¯å°±ä¼šä¸¢å¤±ï¼Œå› ä¸ºä¸Ž2ç›¸ä¹˜ç­‰ä»·äºŽä½ç§»è¿ç®—ã€‚ä½¿ç”¨ç´ æ•°çš„å¥½å¤„å¹¶ä¸å¾ˆæ˜Žæ˜¾ï¼Œä½†æ˜¯ä¹ æƒ¯ä¸Šéƒ½ä½¿ç”¨ç´ æ•°æ¥è®¡ç®—æ•£åˆ—ç»“æžœã€‚31æœ‰ä¸ªå¾ˆå¥½çš„ç‰¹æ€§ï¼Œå³ç”¨ä½ç§»å’Œå‡æ³•æ¥ä»£æ›¿ä¹˜æ³•ï¼Œå¯ä»¥å¾—åˆ°æ›´å¥½çš„æ€§èƒ½ï¼Œ 31 * i == (i << 5) - i ã€‚çŽ°ä»£çš„VMå¯ä»¥è‡ªåŠ¨å®Œæˆè¿™ç§ä¼˜åŒ–ã€‚
